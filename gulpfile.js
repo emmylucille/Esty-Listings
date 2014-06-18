@@ -14,8 +14,8 @@ gulp.task('styles', function() {
         errLogToConsole: true
       }))
     .pipe(csso())
-    .pipe(rename('styles/main.min.css'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(rename('main.min.css'))
+    .pipe(gulp.dest('./dist/styles'))
     .pipe(connect.reload());
 });
 
@@ -47,7 +47,7 @@ gulp.task('connect', function() {
 
 // Watch
 gulp.task('watch', function() {
-    gulp.watch('src/styles/**/*.css', ['styles']);
+    gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/images/**/*', ['images']);
     gulp.watch('src/**/*.html', ['templates']);
 });

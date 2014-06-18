@@ -1,13 +1,20 @@
+<!DOCTYPE html>
+
+
 <html>
   <head>
-    <script>http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/main.min.css">
   </head>
 
   <body>
     <h1>Ceramic Llammas</h1>
+    <ul id ="llammas"></ul>
 
     <script>
-  var items = {
+  var items = [
+  {
+   "count":12,
    "results":[
       {
          "listing_id":193212024,
@@ -1832,10 +1839,14 @@
       "effective_page":1,
       "next_page":null
    }
-}
+}];
 
   items.forEach(function (item) {
-    $('items.results').append(item.image);
+    item.results.forEach(function(picture){
+      picture.Images.forEach(function(link){
+        $('#llammas').append('<li><img src="' + link.url_75x75 + '"></li>')
+      });
+    });
   });
     </script>
   </body>
