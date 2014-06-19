@@ -1,13 +1,22 @@
+<!DOCTYPE html>
+
+
 <html>
   <head>
-    <script>http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/main.min.css">
   </head>
 
   <body>
     <h1>Ceramic Llammas</h1>
+    <div id ="container">
+    </div>
 
     <script>
-  var items = {
+
+  var items = [
+  {
+   "count":12,
    "results":[
       {
          "listing_id":193212024,
@@ -1832,12 +1841,46 @@
       "effective_page":1,
       "next_page":null
    }
-}
+}];
 
-  items.forEach(function (item) {
-    $('items.results').append('<li class="item">' + item.title '</li>');
+// This gets me ALL the images! I can get it to look right, but I am not sure where to put link title. If I put it here it is undefined because I am in the images folder.?
+
+  // items.forEach(function (item) {
+  //   item.results.forEach(function(picture){
+  //     picture.Images.forEach(function(link){
+  //       $('#container').append('<a><img src="' + link.url_170x135 + '"></a>')
+  //     });
+  //   });
+  // });
+
+//I am proud of this function because I was able to back out of the images folder and call to the title. Reworking my CSS got the title inside the image box. I can fix the run on copy with a trunucate, but I must sleep.
+
+items.forEach(function (item) {
+  item.results.forEach(function(picture){
+    picture.Images.forEach(function(link){
+      $('#container').append('<a><img src="' + link.url_170x135 + '"><p>' + picture.title + '</p></a>')
+    });
   });
+});
+
+// Trying to get just the first image from the item, when I console.log "x" it shows the 12 images I am looking for but the call function that worked in the first one isn't working in the this.
+//
+  // items.forEach(function (item) {
+  //   item.results.forEach(function(stuff){
+  //     var x = stuff.Images[0].url_170x135;
+  //     $('#container').append.('<a><img src="' + x + '"></a>')
+  //   });
+  // });
+
+//Found Talal's homework.. thought it might help.
+
+// items.results.forEach(function (a) {
+//     $('#container').append('<a><img src="' + a.Images[0].url_170x135 + link.title +'"></a>')
+//
+// });
+
     </script>
+
   </body>
 
 </html>
