@@ -1,3 +1,7 @@
+body {
+  // background: #f5f5f1;
+}
+
 h1 {
   font-family: arial;
   font-size: 50px;
@@ -13,7 +17,19 @@ h1 {
   margin: auto;
 }
 
-#container img {
-  height: 200px;
-  margin: 20px;
+#container a {
+  display: inline-block;
+  height: 175px;
+  margin: 40px;
+  background: white;
+  padding: 5px 5px 60px 5px;
+  border: solid 1px #cecec8;
+  border-radius: 3px;
+}
+
+#container p {
+  margin-top: 5px;
+	font-family: arial;
+	font-size: 12px;
+	color: #666
 }
