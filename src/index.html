@@ -9,7 +9,8 @@
 
   <body>
     <h1>Ceramic Llammas</h1>
-    <ul id ="llammas"></ul>
+    <div id ="container">
+    </div>
 
     <script>
   var items = [
@@ -1840,15 +1841,36 @@
       "next_page":null
    }
 }];
+//This gets me ALL the images!
 
   items.forEach(function (item) {
     item.results.forEach(function(picture){
       picture.Images.forEach(function(link){
-        $('#llammas').append('<li><img src="' + link.url_75x75 + '"></li>')
+        $('#container').append('<a><img src="' + link.url_170x135 + '"></a>')
       });
     });
   });
+
+//Trying to get just the first image from the item, when I console.log "x" it shows the 12 images I am looking for but the call function that worked in the first one isn't working in the second.
+  //
+  // items.forEach(function (item) {
+  //   item.results.forEach(function(stuff){
+  //     var x = stuff.Images[0].url_170x135;
+  //     console.log(x)
+  //     $('#container').append.('<a><img src="' + x + '"></a>')
+  //   });
+  // });
+
+  // items.forEach(function (item) {
+  //   item.results.forEach(function(stuff, idx){
+  //     stuff.Images[0].url_170x135;
+  //     $('#container').append.('<a><img src="' + x + '"></a>')
+  //   });
+  // });
+
+
     </script>
+
   </body>
 
 </html>
